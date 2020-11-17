@@ -9,8 +9,5 @@ import AppComponent from './app.component';
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
-  ],
 })
 export class AppModule { }
