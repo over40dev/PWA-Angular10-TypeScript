@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: '<app-row-card></app-row-card>',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
     './card.component.scss',
   ]
 })
-export class CardComponent {}
+export class CardComponent {
+  @Input() imageUrl: string;
+  @Input() imageName: string;
+}
