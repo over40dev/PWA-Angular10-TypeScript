@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
     './score.component.scss',
   ]
 })
-export class ScoreComponent {}
+export class ScoreComponent {
+  score = 10;
+}
