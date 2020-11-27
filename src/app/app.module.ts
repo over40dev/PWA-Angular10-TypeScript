@@ -31,6 +31,9 @@ import { TimerComponent } from './timer/timer.component';
     NgbModule,
     FontAwesomeModule,
   ],
+  imports: [
+    BrowserModule,
+  ]
 })
 export class AppModule {
   // c14-04 (setup constructor to inject FA Icon Library to get access to our chosen icons)
