@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: '<app-root></app-root>',
+  selector: 'app-root',
   template: '<p>Hello World</p>'
 })
-export default class AppComponent {}
-
+export class AppComponent {}
