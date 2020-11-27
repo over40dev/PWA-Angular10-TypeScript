@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import AppComponent from './app.component';
+import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // c14-02 (import FaIconLirary)
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
