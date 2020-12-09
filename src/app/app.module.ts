@@ -10,7 +10,7 @@ import { QuestionComponent } from './question/question.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ScoreComponent } from './score/score.component';
 import { CardRowComponent } from './card-row/card-row.component';
-// import { CardComponent } from './card-row/card/card.component';
+import { CardComponent } from './card-row/card/card.component';
 import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { TimerComponent } from './timer/timer.component';
     NotificationComponent,
     ScoreComponent,
     CardRowComponent,
-    // CardComponent,
+    CardComponent,
     TimerComponent,
   ],
   imports: [
