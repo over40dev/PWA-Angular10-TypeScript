@@ -7,4 +7,4 @@ import { Component } from '@angular/core';
     './app.component.scss',
   ]
 })
-export default class AppComponent {}
+export class AppComponent {}
