@@ -21,7 +21,6 @@ export class GameService {
     this.currentQuestion = '';
     this.score = 0;
     this.getRandomQuestions();
-    console.log('start');
   }
 
   public getCurrentQuestion(): string {

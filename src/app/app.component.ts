@@ -14,6 +14,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameService.startGame();
-    console.log(this.gameService.getCurrentImages());
   }
 }
