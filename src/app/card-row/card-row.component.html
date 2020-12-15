@@ -1,10 +1,11 @@
-<div class="d-flex flex-row justify-content-center">
+<div class="d-flex flex-row justify-content-center"
+  *ngFor="let cardRow of gameService.getCurrentImages()">
   <app-row-card class="card imageCard"
-    imageUrl="./../assets/bote.png"
-    imageName="bote">
+    imageUrl="./../assets/{{cardRow[0]}}.png"
+    imageName="{{cardRow[0]}}">
   </app-row-card>
   <app-row-card class="card imageCard"
-    imageUrl="./../assets/pala.png"
-    imageName="pala">
+    imageUrl="./../assets/{{cardRow[1]}}.png"
+    imageName="{{cardRow[1]}}">
   </app-row-card>
 </div>
