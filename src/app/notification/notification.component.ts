@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
 selector : 'app-notification',
@@ -7,4 +8,6 @@ templateUrl : 'notification.component.html',
     'notification.component.scss',
   ]
 })
-export class NotificationComponent {}
+export class NotificationComponent {
+  constructor(public gameService: GameService) {}
+}
