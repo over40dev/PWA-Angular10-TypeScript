@@ -8,6 +8,16 @@ export class GameService {
   private score = 15;
   private currentImages = [[], []];
   private currentQuestion = '';
+  private showModal = false;
+  // private isCorrect = false;
+
+  public getShowModal(): boolean {
+    return this.showModal;
+  }
+
+  // public getIsCorrect(): boolean {
+  //   return this.isCorrect;
+  // }
 
   public getScore(): number {
     return this.score;
