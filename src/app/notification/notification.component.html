@@ -1,3 +1,9 @@
 <div [ngClass]="{'notification': !gameService.getShowModal()}">
-  <div class="alert alert-success">Correct!</div>
+  <div *ngIf="gameService.getCorrectAnswer(); else invalidAnswer"
+    class="alert alert-success">
+    Correct!
+  </div>
+  <ng-template #invalidAnswer>
+    <div class="alert alert-danger">Wrong Answer!</div>
+  </ng-template>
 </div>
