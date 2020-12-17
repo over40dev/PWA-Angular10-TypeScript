@@ -10,6 +10,15 @@ export class GameService {
   private currentQuestion = '';
   private showModal = true;
   private correctAnswer = false;
+  private interval = null;
+  private timerDuration = 1000 * 60;
+  private timerSequence = 100;
+  private timerChunk = 100 / this.timerDuration * this.timerSequence;
+  private timeLeftPercent = 0;
+
+  public getTimeLeftPercent(): number {
+    return this.timeLeftPercent;
+  }
 
   public getShowModal(): boolean {
     return this.showModal;
@@ -31,6 +40,14 @@ export class GameService {
     this.currentQuestion = '';
     this.score = 0;
     this.getRandomQuestions();
+
+    this.interval = setInterval(() => {
+      if (this.timeLeftPercent < 100) {
+        this.timeLeftPercent += this.timerChunk;
+      } else {
+        // TODO: end game logic
+      }
+    }, this.timerSequence);
   }
 
   public getCurrentQuestion(): string {
