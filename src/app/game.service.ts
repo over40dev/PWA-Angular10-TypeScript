@@ -39,12 +39,14 @@ export class GameService {
   public startGame(): void {
     this.currentQuestion = '';
     this.score = 0;
+    this.timeLeftPercent = 0;
     this.getRandomQuestions();
 
     this.interval = setInterval(() => {
       if (this.timeLeftPercent < 100) {
         this.timeLeftPercent += this.timerChunk;
       } else {
+        clearInterval(this.interval);
         // TODO: end game logic
       }
     }, this.timerSequence);
