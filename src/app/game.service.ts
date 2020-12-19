@@ -8,13 +8,14 @@ export class GameService {
   private score = 15;
   private currentImages = [[], []];
   private currentQuestion = '';
-  private showModal = true;
+  private showModal = false;
   private correctAnswer = false;
   private interval = null;
   private timerDuration = 1000 * 60;
   private timerSequence = 100;
   private timerChunk = 100 / this.timerDuration * this.timerSequence;
   private timeLeftPercent = 0;
+  private gameEnded = false;
 
   public getTimeLeftPercent(): number {
     return this.timeLeftPercent;
@@ -41,13 +42,14 @@ export class GameService {
     this.score = 0;
     this.timeLeftPercent = 0;
     this.getRandomQuestions();
+    this.gameEnded = false;
 
     this.interval = setInterval(() => {
       if (this.timeLeftPercent < 100) {
         this.timeLeftPercent += this.timerChunk;
       } else {
         clearInterval(this.interval);
-        // TODO: end game logic
+        this.gameEnded = true;
       }
     }, this.timerSequence);
   }
@@ -68,5 +70,23 @@ export class GameService {
       [randomImages[0], randomImages[1]],
       [randomImages[2], randomImages[3]]
     ];
+  }
+
+  public checkAnswer(guess: string): void {
+    if (!this.gameEnded && !this.showModal) {
+      if (guess === this.currentQuestion) {
+        this.correctAnswer = true;
+        this.score += 1;
+      } else {
+        this.correctAnswer = false;
+      }
+
+      this.showModal = true;
+
+      setTimeout(() => {
+        this.showModal = false;
+        this.getRandomQuestions();
+      }, 1200);
+    }
   }
 }
