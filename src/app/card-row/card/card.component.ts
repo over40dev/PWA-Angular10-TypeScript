@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GameService } from '../../game.service';
+import { MessageService } from '../../message.service';
 
 @Component({
   selector: 'app-row-card',
@@ -9,7 +10,14 @@ import { GameService } from '../../game.service';
   ]
 })
 export class CardComponent {
-  constructor(private gameService: GameService) {}
+  constructor(
+    private gameService: GameService,
+    private messageService: MessageService,
+  ) {
+    this.messageService.getMessasge().subscribe((message) => {
+      console.log(message);
+    });
+  }
 
   @Input() imageUrl: string;
   @Input() imageName: string;
