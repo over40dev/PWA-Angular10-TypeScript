@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Questions } from './mock-questions';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
+  constructor(private messageService: MessageService) {}
   private score = 15;
   private currentImages = [[], []];
   private currentQuestion = '';
@@ -82,6 +84,7 @@ export class GameService {
       }
 
       this.showModal = true;
+      this.messageService.sendMessage('CardClicked');
 
       setTimeout(() => {
         this.showModal = false;
