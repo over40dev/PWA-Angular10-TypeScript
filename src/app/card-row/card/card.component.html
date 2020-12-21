@@ -1,5 +1,6 @@
 <div
   class="cardContainer card imageCard"
-  (click)="cardClick()">
+  (click)="cardClick()"
+  [ngClass]="classes">
   <img src="{{imageUrl}}" alt="{{imageName}}" class="card-img-top" />
 </div>

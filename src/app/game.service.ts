@@ -7,7 +7,8 @@ import { MessageService } from './message.service';
 })
 export class GameService {
   constructor(private messageService: MessageService) {}
-  private score = 15;
+  private score = 0;
+  private highScore = 0;
   private currentImages = [[], []];
   private currentQuestion = '';
   private showModal = false;
@@ -18,6 +19,10 @@ export class GameService {
   private timerChunk = 100 / this.timerDuration * this.timerSequence;
   private timeLeftPercent = 0;
   private gameEnded = false;
+
+  public getGameEnded(): boolean {
+    return this.gameEnded;
+  }
 
   public getTimeLeftPercent(): number {
     return this.timeLeftPercent;
@@ -33,6 +38,10 @@ export class GameService {
 
   public getScore(): number {
     return this.score;
+  }
+
+  public getHighScore(): number {
+    return this.highScore;
   }
 
   public getCurrentImages(): string[][] {
