@@ -60,6 +60,9 @@ export class GameService {
         this.timeLeftPercent += this.timerChunk;
       } else {
         clearInterval(this.interval);
+        if (this.score > this.highScore) {
+          this.highScore = this.score;
+        }
         this.gameEnded = true;
       }
     }, this.timerSequence);
