@@ -10,6 +10,7 @@ import { ScoreComponent } from './score/score.component';
 import { CardRowComponent } from './card-row/card-row.component';
 import { CardComponent } from './card-row/card/card.component';
 import { TimerComponent } from './timer/timer.component';
+import { GameOverComponent } from './game-over/game-over.component';
 
 @NgModule({
   bootstrap: [
@@ -23,6 +24,7 @@ import { TimerComponent } from './timer/timer.component';
     CardRowComponent,
     CardComponent,
     TimerComponent,
+    GameOverComponent,
   ],
   imports: [
     BrowserModule,
